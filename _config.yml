@@ -2,13 +2,13 @@
 baseurl: "/orionjeong.github.io"
 url: "https://orionjeong.github.io"
 title: Orion Jeong # site's title
-description: "A website with blog posts and pages" # used by search engines
+description: "OrionJeong blog" # used by search engines
 
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Type on Strap # blog's title
+  title: OrionJeong # blog's title
   avatar: assets/img/triangle.svg
   favicon: assets/favicon.ico
   gravatar: # Email MD5 hash
