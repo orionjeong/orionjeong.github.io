@@ -2,11 +2,10 @@
 layout: page
 ---
 
-{% for post in site.categories %}
+{% for posts in site.categories %}
 
-
-   {{ post}}
-   <div>test</div>
-
-
+  {% for post in posts %}
+    {{post.title}}
+    <div>test1</div>
+  {% endfor %}
 {% endfor %}
