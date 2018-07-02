@@ -2,11 +2,9 @@
 layout: page
 ---
 
-{% for category in site.categories %}
-  {% for posts in category %}
-    <div>posts{{posts}}</div>
-    <div>posts{{posts.title}}</div>
-    <div>posts{{posts.url}}</div>
 
-  {% endfor %}
+{% for category in site.categories %}
+    <a href="./{{category[0]}}"><h2>{{category[0]}}</h2></a>
+
+    <hr>
 {% endfor %}
