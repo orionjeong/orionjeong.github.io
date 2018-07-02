@@ -3,13 +3,8 @@ layout: page
 ---
 
 {% for category in site.categories %}
-  <div>category{{category}}</div>
-  
   {% for posts in category %}
     <div>posts{{posts}}</div>
-      <div>posts.title{{posts.title}}</div>
-    {% for post in posts %}
-      <div>post.title{{post.title}}</div>
-    {% endfor %}
+
   {% endfor %}
 {% endfor %}
