@@ -17,7 +17,7 @@ category: 디자인패턴
 
 
 
-![image-20181117235157600](assets/img/팩토리메서드패턴.png)
+![image-20181117235157600](/assets/img/팩토리메서드패턴.png)
 
 쉽게 UML 클래스 다이어그램을 설명하자면 먼저 Creator를 super클래스 Creator1을 Creator를 상속받는 sub클래스라고 생각해보자. super클래스에서는 action메서드 안에서 factoryMethod를 호출해서 product를 가져오고 있다. 그리고 factoryMethod()를 sub클래스에서 구현하고 있다. 즉 위에서 설명한대로 Product오브젝트를 생성하는 구체적인 방법을 super클래스에서 하지 않고 sub클래스에 맡긴 모습이다. 
 
