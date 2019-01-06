@@ -1,16 +1,11 @@
 ---
 layout: post
-title:  "디자인패턴[팩토리메서드패턴(factory method pattern)]"
+title:  "디자인패턴[팩토리 메서드 패턴(factory method pattern)]"
 date:   2018-11-19
 description: 템플릿 메서드 패턴에 대한 내용입니다.
 tags: [디자인패턴, spring, java]
 category: 디자인패턴
 ---
-
-
-
-## 디자인패턴[팩토리메서드패턴(factory method pattern)]
-
 #### 정의
 
 팩토리메서드패턴은 서브클래스에서 구체적인 오브젝트 생성 방법을 결정하게 하는 것을 말한다. 즉 원래는 슈퍼클래스에서 어떠한 오브젝트를 생성해서 사용하고 있었는데 이를 서브클래스에 위임하는 것을 말한다. 
