@@ -22,7 +22,7 @@ category: tips
 
 
 
-**응용프로그램 만드는 방법 **
+**응용프로그램 만드는 방법**
 
 1. AppleScript Editor를 켠다
 
