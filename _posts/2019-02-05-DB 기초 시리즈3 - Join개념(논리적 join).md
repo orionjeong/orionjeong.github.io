@@ -148,6 +148,9 @@ select * from tableA natural join tableB
 select EMP.DEPTNO, EMPNO from emp natural join dept; #ERROR: NATURAL JOIN에 사용된 열은 식별자를 가질 수 없음
 ```
 
+<br/>
+
+<br/>
 
 
 **3. Cross Join**
@@ -182,6 +185,8 @@ Outer Join은 Inner Join과 대비되는 개념입니다. Join 조건에서 동�
 
 - **Left Outer Join**
 
+<br/>
+
   조인 수행시 먼저 표기된 좌측 테이블에 해당하는 데이터를 먼저 읽은 후, 나중 표기된 우측 테이블에서 Join 대상 데이터를 읽어 옵니다. 즉 Table A(기준 테이블), Table B이 있을 때 A와 B를 비교하여 B의 컬럼에서 Join컬럼과 같은 값이 있을 때 해당 데이터를 가져오고, 없을 때는 NULL 값으로 채웁니다. Left Outer Join은 Left Join으로 Outer를 생략할 수 있습니다. 
 
 ![image-20190217134552524](/assets/img//image-20190217134552524.png)
@@ -190,6 +195,8 @@ Outer Join은 Inner Join과 대비되는 개념입니다. Join 조건에서 동�
 
 - **Right Outer Join**
 
+<br/>
+
   Left Outer Join과는 반대로 우측 테이블이 드라이빙 테이블이 되어 join을 주도합니다. 
 
 ![image-20190217134618217](/assets/img//image-20190217134618217.png)
@@ -197,6 +204,7 @@ Outer Join은 Inner Join과 대비되는 개념입니다. Join 조건에서 동�
 <br/>
 
 - **Full Outer Join**
+<br/>
 
   조인 수행시 좌측, 우측 테이블의 모든 데이터를 읽어 Join합니다. 테이블 A, B모두 기준이 됩니다. 
 
@@ -215,6 +223,7 @@ Join의 조건으로는 Using과 On조건절을 사용할 수 있습니다. 두 
 <br/>
 
 - Using 조건절 
+<br/>
 
   1. 두 테이블의 join 컬럼이 동일한 이름을 쓸 때 사용가능합니다. 
 
@@ -240,6 +249,8 @@ Join의 조건으로는 Using과 On조건절을 사용할 수 있습니다. 두 
 <br/>
 
 - On 조건절
+
+<br/>
 
   1. 두 테이블의 Join 컬럼이 동일한 이름이 아니어도 상관 없습니다. 
 
@@ -269,7 +280,7 @@ Join의 조건으로는 Using과 On조건절을 사용할 수 있습니다. 두 
 
 <br/>
 
-많은 블로그에서 equi join(=)은 inner join에 속한 조인으로 설명하는 경우가 많습니다. 이것은 잘 못된 설명으로 equi join은 inner join, outer join모두 될 수 있습니다. 그저 **equi join은 =(동등 비교)를 통해서 join을 결정하느냐 아니냐의 차이일 뿐입니다.** inner join의 하위개념이 아닙니다. **non equi join은 당연히 =(동등 비교)가 아닌 나머지를 뜻합니다. ** 처음 join의 종류를 배울 때 너무 많은 join들의 상관관계가 헷갈려 이해하기 어려운 경우가 생깁니다. 표준 join의 개념을 익히고 그에 따른 분류를 따라가야 합니다. 
+많은 블로그에서 equi join(=)은 inner join에 속한 조인으로 설명하는 경우가 많습니다. 이것은 잘 못된 설명으로 equi join은 inner join, outer join모두 될 수 있습니다. 그저 **equi join은 =(동등 비교)를 통해서 join을 결정하느냐 아니냐의 차이일 뿐입니다.** inner join의 하위개념이 아닙니다. **non equi join은 당연히 =(동등 비교)가 아닌 나머지를 뜻합니다.** 처음 join의 종류를 배울 때 너무 많은 join들의 상관관계가 헷갈려 이해하기 어려운 경우가 생깁니다. 표준 join의 개념을 익히고 그에 따른 분류를 따라가야 합니다. 
 
 <br/>
 
@@ -297,7 +308,7 @@ Join의 조건으로는 Using과 On조건절을 사용할 수 있습니다. 두 
 
 **마치며**
 
-이상으로 DB Join에 대한 설명을 마치겠습니다. 많은 내용들을 정리한 내용이며 나의 생각을 정리했습니다. 혹시라도 잘 못된 점이 있다면 피드백 주시면 감사하겠습니다.
+이상으로 DB Join에 대한 설명을 마치겠습니다. 많은 내용들을 정리한 내용이며 나의 생각을 정리했습니다. 혹시라도 잘못된 점이 있다면 피드백 주시면 감사하겠습니다.
 
 <br/>
 
