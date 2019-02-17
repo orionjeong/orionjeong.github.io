@@ -5,6 +5,8 @@ date:   2019-02-17
 description: DB 기초 시리즈3로 DB 논리적조인 join에 대한 설명입니다.
 tags: [DB, Databases, 기초, DBMS, join, 면접, 조인]
 category: [DB, 면접]
+---
+
 
 저번 post DB 기초 시리즈2 - Join개념(물리적 join)에서도 말했지만 DB JOIN은 물리적 조인과 논리적 조인 둘로 나뉩니다. 이는 조인의 처리 방식, 조인의 종류로 나뉜다는 뜻입니다. join의 처리 방식은 join을 물리적으로 행하는 방식입니다. 그리고 그 종류로는 대표적으로 **1. NL(Nested Loof) join, 2. Sort Merge join, 3. Hash join**이 있습니다. 
 
@@ -88,7 +90,7 @@ Inner Join은 Outer Join과 대비되는 개념입니다. join 조건에서 동�
 
 ![image-20190216223641431](/assets/img//image-20190216223641431.png)
 
-</br>
+<br/>
 
 예)
 
@@ -116,13 +118,13 @@ select * from tableA, tableB where tableA.name = tableB.name
 
 
 
-</br>
+<br/>
 
-</br>
+<br/>
 
 **2. Natural Join**
 
-</br>
+<br/>
 
 Natural Join은 두 테이블 간의 동일한 이름을 갖는 모든 칼럼들에 대해 EQUI(=) JOIN을 수행합니다. Natural Join이 명시되면 , 추가로 on 조건절, where 절에서 join 조건을 정의할 수 없게됩니다.(Using 조건절은 사용할 수 있음)
 
@@ -150,13 +152,13 @@ select EMP.DEPTNO, EMPNO from emp natural join dept; #ERROR: NATURAL JOIN에 사
 
 **3. Cross Join**
 
-</br>
+<br/>
 
 Cross Join은 일치하는 컬럼에 대한 조건이 없으며 모든 경우를 고려하는 조인이라고 생각하시면 됩니다. 즉 해당 테이블들의 모든 데이터 조합이 결과롤 리턴됩니다. 보통은 많이 사용되지 않지만, 리포트, 튜닝을 작성하기 위해 아니면 매달, 날짜별로 출력하기 위해서 사용할 수 있습니다. 
 
 ![image-20190217133939318](/assets/img//image-20190217133939318.png)
 
-</br>
+<br/>
 
 예)
 
@@ -164,19 +166,19 @@ Cross Join은 일치하는 컬럼에 대한 조건이 없으며 모든 경우를
 select * from tableA cross join tableB
 ```
 
-</br>
+<br/>
 
-</br>
+<br/>
 
 **4.Outer Join**
 
-</br>
+<br/>
 
 Outer Join은 Inner Join과 대비되는 개념입니다. Join 조건에서 동일한 값이 없는 행도 반환할 때도 사용할 수 있습니다. Left Outer Join, Right Outer Join, Full Outer Join 세가지로 나뉩니다. Outer Join을 명시할 경우 From절의 Join조건을 정의하겠다는 표시이기 때문에 Using 조건이나, On 조건절을 필수적으로 사용해야 합니다. Left/Right Outer Join의 경우 기준이 되는 테이블이 조인 수행시 무조건 드라이빙 테이블이 됩니다. 
 
 ![image-20190217134305978](/assets/img//image-20190217134305978.png)
 
-</br>
+<br/>
 
 - **Left Outer Join**
 
@@ -184,7 +186,7 @@ Outer Join은 Inner Join과 대비되는 개념입니다. Join 조건에서 동�
 
 ![image-20190217134552524](/assets/img//image-20190217134552524.png)
 
-</br>
+<br/>
 
 - **Right Outer Join**
 
@@ -192,7 +194,7 @@ Outer Join은 Inner Join과 대비되는 개념입니다. Join 조건에서 동�
 
 ![image-20190217134618217](/assets/img//image-20190217134618217.png)
 
-</br>
+<br/>
 
 - **Full Outer Join**
 
@@ -200,17 +202,17 @@ Outer Join은 Inner Join과 대비되는 개념입니다. Join 조건에서 동�
 
 ![image-20190217134811414](/assets/img//image-20190217134811414.png)
 
-</br>
+<br/>
 
-</br>
+<br/>
 
 **5. Using 조건절 vs On 조건절**
 
-</br>
+<br/>
 
 Join의 조건으로는 Using과 On조건절을 사용할 수 있습니다. 두 조건절이 하는 역할은 비슷합니다. join을 할 수 있는 조건을 명시합니다. 그 차이는 미비하지만 중요할 수 있습니다. 
 
-</br>
+<br/>
 
 - Using 조건절 
 
@@ -235,7 +237,7 @@ Join의 조건으로는 Using과 On조건절을 사용할 수 있습니다. 두 
   select * from tableA inner join tableB using(name) # 공통된 컬럼이름은 name으로 한다. 
   ```
 
-</br>
+<br/>
 
 - On 조건절
 
@@ -259,19 +261,19 @@ Join의 조건으로는 Using과 On조건절을 사용할 수 있습니다. 두 
   select * from tableA inner join tableB on(tableA.name = tableB.name)
   ```
 
-  </br>
+<br/>
 
-  </br>
+<br/>
 
 **6. equi join vs non equi join**
 
-</br>
+<br/>
 
 많은 블로그에서 equi join(=)은 inner join에 속한 조인으로 설명하는 경우가 많습니다. 이것은 잘 못된 설명으로 equi join은 inner join, outer join모두 될 수 있습니다. 그저 **equi join은 =(동등 비교)를 통해서 join을 결정하느냐 아니냐의 차이일 뿐입니다.** inner join의 하위개념이 아닙니다. **non equi join은 당연히 =(동등 비교)가 아닌 나머지를 뜻합니다. ** 처음 join의 종류를 배울 때 너무 많은 join들의 상관관계가 헷갈려 이해하기 어려운 경우가 생깁니다. 표준 join의 개념을 익히고 그에 따른 분류를 따라가야 합니다. 
 
-</br>
+<br/>
 
-</br>
+<br/>
 
 **요약**
 
@@ -287,9 +289,9 @@ Join의 조건으로는 Using과 On조건절을 사용할 수 있습니다. 두 
 
 ![image-20190217145532317](/assets/img//image-20190217145532317.png)
 
-</br>
+<br/>
 
-</br>
+<br/>
 
 
 
@@ -297,9 +299,9 @@ Join의 조건으로는 Using과 On조건절을 사용할 수 있습니다. 두 
 
 이상으로 DB Join에 대한 설명을 마치겠습니다. 많은 내용들을 정리한 내용이며 나의 생각을 정리했습니다. 혹시라도 잘 못된 점이 있다면 피드백 주시면 감사하겠습니다.
 
-</br>
+<br/>
 
-</br>
+<br/>
 
 ### 참고자료 
 
